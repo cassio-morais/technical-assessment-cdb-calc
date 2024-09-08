@@ -6,6 +6,9 @@ namespace Backend.Api.Services
     {
         public decimal GetTheCdbTaxAmount(decimal value, int months)
         {
+            if (value <= 0 || months <= 0)
+                throw new ArgumentException("Values cannot be less than or equal 0");
+
             decimal tax;
 
             if (months <= 6)

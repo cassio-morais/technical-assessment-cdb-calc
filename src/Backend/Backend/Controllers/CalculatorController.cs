@@ -22,7 +22,7 @@ namespace Backend.Api.Controllers
         public IActionResult Post([FromBody][Required] CdbCalculationRequest dto)
         {
             if (dto.InitialAmount <= 0 || dto.Months <= 0)
-                return BadRequest(new ProblemDetails() { Title = "Values cannot be less than or equal 0" } );
+                return BadRequest(new ProblemDetails() { Title = "Values cannot be less than or equal 0" });
 
             var response = _calculatorService.CalculateCdbInvestment(dto.InitialAmount, dto.Months);
 
@@ -31,6 +31,6 @@ namespace Backend.Api.Controllers
     }
 
     public record CdbCalculationRequest(
-        decimal InitialAmount, 
+        decimal InitialAmount,
         int Months);
 }

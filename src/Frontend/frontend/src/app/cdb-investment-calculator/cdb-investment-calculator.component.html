@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>Cálculo de Investimento CDB</h2>
+    <form (ngSubmit)="calculateInvestment()" #investmentForm="ngForm">
+      <div class="form-group">
+        <label for="initialAmount">Valor Inicial (R$)</label>
+        <input
+          type="number"
+          id="initialAmount"
+          name="initialAmount"
+          [(ngModel)]="initialAmount"
+          required
+          min="1"
+          class="form-control"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="months">Prazo (meses)</label>
+        <input
+          type="number"
+          id="months"
+          name="months"
+          [(ngModel)]="months"
+          required
+          min="1"
+          class="form-control"
+        />
+      </div>
+  
+      <button type="submit" class="btn btn-primary add-space" [disabled]="investmentForm.invalid">
+        Calcular
+      </button>
+    </form>
+  
+    <div *ngIf="grossIncome !== null && netIncome !== null">
+      <h3>Resultado:</h3>
+      <p>Rendimento Bruto: {{ grossIncome | currency:'BRL' }}</p>
+      <p>Rendimento Líquido: {{ netIncome | currency:'BRL' }}</p>
+    </div>
+  </div>

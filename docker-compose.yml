@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+
+  backend_api_cdb:
+    build:
+      context: ./src/Backend/Backend
+      dockerfile: ./Dockerfile
+    image: backend-cdb:latest
+    container_name: backend-cdb
+    ports:
+    - 8081:8083
+    networks:
+    - cdb-network
+    environment:
+    - ASPNETCORE_ENVIRONMENT=Development
+
+  frontend_cdb:
+    build:
+      context: ./src/Frontend/frontend
+      dockerfile: ./Dockerfile
+    image: frontend-cdb:latest
+    container_name: frontend-cdb
+    ports:
+    - 8082:4200
+    depends_on: 
+    - backend_api_cdb
+
+networks:
+    cdb-network:
+        driver: bridge

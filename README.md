@@ -25,7 +25,7 @@
  - Backend: 
  -  _Disclaimer_: Docker: port 8082. Development mode: port 5139
  ```
- curl --location 'http://localhost:8082/api/calculator/cdb' \
+ curl --location 'http://localhost:{{port}}/api/calculator/cdb' \
 --header 'accept: */*' \
 --header 'Content-Type: application/json' \
 --data '{

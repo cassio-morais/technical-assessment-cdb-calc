@@ -29,8 +29,4 @@ namespace Backend.Api.Controllers
             return Ok(response);
         }
     }
-
-    public record CdbCalculationRequest(
-        decimal InitialAmount,
-        int Months);
 }

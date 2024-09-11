@@ -13,6 +13,7 @@ builder.Services.AddSwaggerGen(opt =>
     opt.IncludeXmlComments(xmlPath);
 });
 
+// allow any just for test purpose
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(policy =>

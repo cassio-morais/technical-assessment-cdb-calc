@@ -1,4 +1,4 @@
-# technical-assessment-cdb-calc
+# Technical Aassessment CDB Investment Calculation
 
 ## How to run via Docker:
  - Install Docker and Docker Compose

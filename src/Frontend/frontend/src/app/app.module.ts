@@ -26,7 +26,8 @@ registerLocaleData(ptBr);
   ],
   providers: [
     provideHttpClient(),  
-    { provide: LOCALE_ID, useValue: 'pt' },],
+    { provide: LOCALE_ID, useValue: 'pt' },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

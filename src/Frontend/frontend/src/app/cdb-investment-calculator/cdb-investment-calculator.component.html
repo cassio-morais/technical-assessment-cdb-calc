@@ -7,7 +7,7 @@
           type="number"
           id="initialAmount"
           name="initialAmount"
-          [(ngModel)]="initialAmount"
+          [(ngModel)]="cdbInvestmentRequest.initialAmount"
           required
           min="1"
           class="form-control"
@@ -20,21 +20,21 @@
           type="number"
           id="months"
           name="months"
-          [(ngModel)]="months"
+          [(ngModel)]="cdbInvestmentRequest.months"
           required
           min="1"
           class="form-control"
         />
       </div>
   
-      <button type="submit" class="btn btn-primary add-space" [disabled]="investmentForm.invalid">
+      <button type="submit" class="btn btn-primary add-space" > 
         Calcular
       </button>
     </form>
   
-    <div *ngIf="grossIncome !== null && netIncome !== null">
+    <div *ngIf="cdbInvestmentResponse.grossIncome !== null && cdbInvestmentResponse.netIncome !== null">
       <h3>Resultado:</h3>
-      <p>Rendimento Bruto: {{ grossIncome | currency:'BRL' }}</p>
-      <p>Rendimento Líquido: {{ netIncome | currency:'BRL' }}</p>
+      <p>Rendimento Bruto: {{ cdbInvestmentResponse.grossIncome | currency:'BRL' }}</p>
+      <p>Rendimento Líquido: {{ cdbInvestmentResponse.netIncome | currency:'BRL' }}</p>
     </div>
   </div>
